@@ -2,7 +2,7 @@ import time
 
 from selenium import  webdriver
 from selenium.webdriver.common.by import By
-
+from configurations.url import URL
 
 class Alertpage:
     def __init__(self,driver):
@@ -16,7 +16,12 @@ class Alertpage:
     modern_alert_cross_button_xpath = "/html/body/app-root/app-alert/section/div/div/div[1]/div/div/div[5]/button"
 
     def launch_alert_page(self):
-        self.driver.get(self.url_alert)
+        # self.driver.get(self.url_alert)
+        self.driver.get(URL.alert_url())
+
+
+
+
 
     def click_simple_alert_button(self):
         self.driver.find_element(By.XPATH,self.simple_alert_button_xpath).click()

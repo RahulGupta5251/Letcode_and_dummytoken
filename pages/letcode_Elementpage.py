@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 import pytest
 import time
 
+from configurations.url import URL
+
 
 class Elementpage:
     def __init__(self,driver):
@@ -13,7 +15,7 @@ class Elementpage:
     git_image_xpath = "//img[@alt = 'Placeholder image']"
 
     def launch_elementpage(self):
-        self.driver.get(self.element_url)
+        self.driver.get(URL.element_url())
 
     def enter_usename(self):
         self.driver.find_element(By.XPATH,self.input_text_xpath).send_keys("rahul")

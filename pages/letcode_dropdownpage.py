@@ -3,6 +3,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 import time
 
+from configurations.url import URL
+
+
 class Dropdownpage:
 
     def __init__(self,driver):
@@ -18,7 +21,7 @@ class Dropdownpage:
 
 
     def launch_dropdownpage(self):
-        self.driver.get("https://letcode.in/dropdowns")
+        self.driver.get(URL.dropdown_url())
 
     def select_fruit_dropdown(self):
         fruits = self.driver.find_element(By.XPATH,self.fruit_dropdown_button_xpath)

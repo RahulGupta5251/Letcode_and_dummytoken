@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 import time
 
+from configurations.url import URL
+
+
 class Windowpage:
 
     def __init__(self,driver):
@@ -12,7 +15,7 @@ class Windowpage:
     multiple_window_btn_xpath = "//*[@id='multi']"
 
     def launch_windowpage(self):
-        self.driver.get(self.window_page_url)
+        self.driver.get(URL.window_url())
 
     def click_open_homepage_btn(self):
         self.driver.find_element(By.XPATH,self.open_home_page_btn_xpath).click()
